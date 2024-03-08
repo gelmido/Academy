@@ -8,15 +8,15 @@
         Value: ""
       },
 	opts = {
-	BatchSize: 10
+	BatchSize = 10
 	};
 
 	var result=[],
 	moreData=true,
 	reqID = req = null;
-	while (moreData) {
-		moreData = false;
-		if(req == null)
+while (moreData) {
+	moreData = false;
+	if(req == null){
 		req = api.retrieve("DataExtension", columns, filter);
 	}
 	else{
@@ -26,5 +26,6 @@
 		moreData=req.HasMoreRows;
 		result.push(req.Results.length);
 	}
-  	Write("version 1"+Stringify(result));
+}
+  Write("version 1"+Stringify(result));
 </script>
