@@ -11,20 +11,20 @@
 	BatchSize = 10
 	};
 
-var result=[],
-moreData=true,
-reqID = req = null;
-while (moreData) {
-moreData = false;
-if(req == null)
-req = api.retrieve("DataExtension", columns, filter);
-}
-else{
-req=api.getNextBatch("DataExtension",reqID);
-}
-if (req){
-moreData=req.HasMoreRows;
-result.push(req.Results.length);
-}
-  Write("version 1"+Stringify(result));
+	var result=[],
+	moreData=true,
+	reqID = req = null;
+	while (moreData) {
+		moreData = false;
+		if(req == null)
+		req = api.retrieve("DataExtension", columns, filter);
+	}
+	else{
+		req=api.getNextBatch("DataExtension",reqID);
+	}
+	if (req){
+		moreData=req.HasMoreRows;
+		result.push(req.Results.length);
+	}
+  	Write("version 1"+Stringify(result));
 </script>
