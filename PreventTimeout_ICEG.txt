@@ -35,7 +35,7 @@
 
         if(post.reqID) props.ContinueRequest = post.reqID;
 
-        var req = api.retrieve("DataExtension", ["Name"], filter, opts, props);
+        var req = api.retrieve("DataExtension", columns, filter, opts, props);
 
         if(req) {
 
