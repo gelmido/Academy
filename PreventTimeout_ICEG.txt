@@ -18,8 +18,8 @@
         if(post == null) return;
 
         var res = [];
-
-        var filter = {
+	var columns = [""Name"],
+        filter = {
             Property: "CustomerKey",
             SimpleOperator: "isNotNull",
             Value: " "
@@ -46,7 +46,7 @@
             }
 
             Write(Stringify({
-                status: (req.HasMoreRows) ? 11 : 1,
+                status: (req.HasMoreRows) ? 201 : 200,
                 reqID: req.RequestID,
                 results: res
             }));
